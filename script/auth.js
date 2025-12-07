@@ -1,65 +1,40 @@
-// --------------------- LOGIN WITH EMAIL ---------------------
 function login(){
     const email = document.getElementById("email").value;
     const pass  = document.getElementById("password").value;
+    if(!email||!pass) return showMsg("Enter email & password");
 
-    if(!email || !pass) return showMsg("Enter email & password");
-
-    auth.signInWithEmailAndPassword(email, pass)
-    .then(async (userCredential) => {
-        const uid = userCredential.user.uid;
-
-        const userDoc = await db.collection("users").doc(uid).get();
-
-        // If user not created in DB yet = add as staff
-        if (!userDoc.exists) {
-            await db.collection("users").doc(uid).set({
-                email: email,
-                name: email.split("@")[0],
-                role: "staff",
-                pin: "301017"
+    auth.signInWithEmailAndPassword(email,pass)
+    .then(async u=>{
+        const doc = await db.collection("users").doc(u.user.uid).get();
+        if(!doc.exists){
+            db.collection("users").doc(u.user.uid).set({
+                email, role:"staff", pin:"301017"
             });
         }
-
-        redirectUser(uid);
+        redirect(u.user.uid);
     })
-    .catch(error => showMsg(error.message));
+    .catch(e=>showMsg(e.message));
 }
 
-// --------------------- PIN LOGIN (Common PIN) ---------------------
 function pinLogin(){
-    let entered = document.getElementById("pinBox").value;
-    if(entered !== "301017") return showMsg("❌ Wrong PIN");
+    let p = document.getElementById("pinBox").value;
+    if(p!=="301017") return showMsg("Wrong PIN!");
 
-    // Find admin or staff with same PIN
-    db.collection("users").where("pin","==","301017").limit(1).get().then(snap=>{
-        if(snap.empty) return showMsg("PIN not configured!");
-
-        let user = snap.docs[0].data();
-        // Anonymous login, but assign role & redirect
+    db.collection("users").where("pin","==","301017").limit(1).get().then(s=>{
+        if(s.empty) return showMsg("PIN not set!");
+        let d = s.docs[0].data();
         auth.signInAnonymously().then(()=>{
-            if(user.role === "admin") window.location.href = "index.html";
-            else window.location.href = "billing.html";
+            if(d.role==="admin") location.href="index.html";
+            else location.href="billing.html";
         });
     });
 }
 
-// --------------------- REDIRECT BASED ON ROLE ---------------------
-function redirectUser(uid){
-    db.collection("users").doc(uid).get().then(doc=>{
-        const role = doc.data().role;
-        if(role === "admin") window.location.href = "index.html";
-        else window.location.href = "billing.html";
+function redirect(uid){
+    db.collection("users").doc(uid).get().then(d=>{
+        if(d.data().role==="admin") location.href="index.html";
+        else location.href="billing.html";
     });
 }
 
-// --------------------- LOGOUT ---------------------
-function logout(){
-    auth.signOut();
-    window.location.href = "login.html";
-}
-
-// -------------------- MESSAGE FUNCTION ---------------------
-function showMsg(txt){
-    document.getElementById("msg").innerText = txt;
-}
+function showMsg(t){ document.getElementById("msg").innerText=t; }
