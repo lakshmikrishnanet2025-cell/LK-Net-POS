@@ -1,18 +1,31 @@
-body { margin:0; font-family:Arial; background:#f4f6ff; display:flex; }
-.sidebar { width:200px; background:#1e5eff; color:#fff; height:100vh; padding-top:15px; position:fixed; }
-.sidebar h3 { text-align:center; margin-bottom:20px; }
-.sidebar a, .sidebar button { display:block; padding:12px; margin:5px; color:#fff; text-decoration:none; border:none; background:transparent; cursor:pointer; }
-.sidebar a:hover, .sidebar .active, .logout:hover { background:rgba(255,255,255,0.2); }
-.content { margin-left:200px; padding:20px; width:calc(100% - 200px); }
-#adminTools input, #adminTools select { padding:7px; margin:5px; border:1px solid #1e5eff; border-radius:3px; }
-#adminTools button { padding:7px; background:#1e5eff; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-#adminTools button:hover { background:#0044cc; }
-.filter { margin-top:10px; }
-.filter select, .filter input { padding:6px; margin-right:8px; border:1px solid #0044cc; border-radius:4px; }
-#serviceTable { margin-top:20px; padding:0; }
-#serviceTable li { list-style:none; padding:10px; background:#fff; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; }
-#serviceTable li span { font-weight:bold; color:#1e5eff; }
-.deleteBtn { background:red; color:#fff; border:none; padding:5px 8px; border-radius:4px; cursor:pointer; }
-.deleteBtn:hover { background:#bb0000; }
-.editBtn { background:orange; color:#fff; padding:5px 8px; border:none; border-radius:4px; cursor:pointer; }
-.editBtn:hover { background:#cc7700; }
+body { margin: 0; font-family: Arial, sans-serif; }
+
+.sidebar {
+    width: 200px; background: #1e5bff; color: #fff;
+    position: fixed; top: 0; bottom: 0; padding: 10px;
+}
+.sidebar h3 { text-align: center; margin-bottom: 10px; }
+.sidebar a {
+    display: block; color: #fff; padding: 10px;
+    text-decoration: none; margin: 5px 0; border-radius: 5px;
+}
+.sidebar a:hover, .sidebar .active { background: #003ccb; }
+.logo { width: 70px; display: block; margin: 10px auto 20px; border-radius: 8px; }
+
+button { padding: 8px 15px; background: #1e5bff; border: none; color: #fff; border-radius: 5px; cursor: pointer; }
+button:hover { background: #003ccb; }
+
+.content { margin-left: 220px; padding: 20px; }
+
+#adminTools input, #adminTools select {
+    padding: 8px; margin: 5px; border: 1px solid #888; border-radius: 5px;
+}
+
+ul { list-style: none; padding: 0; margin-top: 20px; }
+li {
+    padding: 10px; border-bottom: 1px solid #ddd;
+}
+li button {
+    background: red; padding: 3px 10px;
+    border-radius: 5px; color: #fff; float: right;
+}
