@@ -1,0 +1,23 @@
+body { margin: 0; font-family: Arial, sans-serif; }
+
+.sidebar {
+    width: 200px; background: #1e5bff; color: #fff;
+    position: fixed; top: 0; bottom: 0; padding: 10px;
+}
+.sidebar h3 { text-align: center; margin-bottom: 10px; }
+.sidebar a {
+    display: block; color: #fff; padding: 10px;
+    text-decoration: none; margin: 5px 0; border-radius: 5px;
+}
+.sidebar a:hover, .sidebar .active { background: #003ccb; }
+.logo { width: 70px; display: block; margin: 10px auto 20px; border-radius: 8px; }
+button { padding: 8px 15px; background: #1e5bff; border: none; color: #fff; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+button:hover { background: #003ccb; }
+
+.content { margin-left: 220px; padding: 20px; }
+
+table {
+    width: 100%; border-collapse: collapse; margin-top: 20px;
+}
+table, th, td { border: 1px solid #000; }
+th, td { padding: 8px; text-align: left; }
