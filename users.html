@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Users - LK Net Centre POS</title>
-<link rel="stylesheet" href="style/users.css">
+<title>Users</title>
+<link rel="stylesheet" href="/LK-Net-POS/style/users.css">
 
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-<script src="script/firebase.js"></script>
+<script src="/LK-Net-POS/script/firebase.js"></script>
 </head>
-<body>
 
+<body>
 <div class="sidebar">
-    <h3>LK POS</h3>
-    <a href="index.html">📊 Dashboard</a>
-    <a href="billing.html">🧾 Billing</a>
-    <a href="services.html">🛠 Services</a>
-    <a href="reports.html">📁 Reports</a>
-    <a class="active">👥 Users</a>
-    <button onclick="logout()">🚪 Logout</button>
+<h3>LK POS</h3><img src="/LK-Net-POS/assets/logo.png" class="logo">
+<a href="index.html">📊 Dashboard</a>
+<a href="billing.html">🧾 Billing</a>
+<a href="services.html">🛠 Services</a>
+<a href="reports.html">📁 Reports</a>
+<a class="active">👥 Users</a>
+<button onclick="logout()">🚪 Logout</button>
 </div>
 
 <div class="content">
-    <h2>Users</h2>
-
-    <div id="addBox">
-        <input id="uemail" placeholder="Email">
-        <input id="upass" type="password" placeholder="Password">
-        <select id="urole"><option value="staff">Staff</option><option value="admin">Admin</option></select>
-        <button onclick="createUser()">➕ Add User</button>
-    </div>
-
-    <ul id="usersList"></ul>
+<h2>Users</h2>
+<input id="uemail" placeholder="Email">
+<input id="upass" type="password" placeholder="Pass">
+<select id="urole"><option>staff</option><option>admin</option></select>
+<button onclick="addU()">Add</button>
+<ul id="uList"></ul>
 </div>
 
-<script src="script/users.js"></script>
+<script src="/LK-Net-POS/script/users.js"></script>
 </body>
 </html>
