@@ -1,57 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Services - LK Net Centre POS</title>
-<link rel="stylesheet" href="style/services.css">
+<title>Services</title>
+<link rel="stylesheet" href="/LK-Net-POS/style/services.css">
 
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-<script src="script/firebase.js"></script>
+<script src="/LK-Net-POS/script/firebase.js"></script>
 </head>
-<body>
 
+<body>
 <div class="sidebar">
-    <h3>LK POS</h3>
-    <a href="index.html">📊 Dashboard</a>
-    <a href="billing.html">🧾 Billing</a>
-    <a class="active">🛠 Services</a>
-    <a href="reports.html">📁 Reports</a>
-    <a href="users.html">👥 Users</a>
-    <button onclick="logout()">🚪 Logout</button>
+<h3>LK POS</h3><img src="/LK-Net-POS/assets/logo.png" class="logo">
+<a href="index.html">📊 Dashboard</a>
+<a href="billing.html">🧾 Billing</a>
+<a class="active">🛠 Services</a>
+<a href="reports.html">📁 Reports</a>
+<a href="users.html">👥 Users</a>
+<button onclick="logout()">🚪 Logout</button>
 </div>
 
 <div class="content">
-    <h2>Services</h2>
-
-    <div id="adminTools">
-        <input id="sname" placeholder="Service Name">
-        <input id="sprice" type="number" placeholder="Price">
-        <select id="scategory">
-            <option>Printing</option>
-            <option>Online</option>
-            <option>Lamination</option>
-            <option>Typing</option>
-            <option>Stationary</option>
-            <option>Others</option>
-        </select>
-        <button onclick="addService()">➕ Add Service</button>
-    </div>
-
-    <div class="filter">
-        <select id="filterCat" onchange="filterList()">
-            <option>All</option><option>Printing</option><option>Online</option>
-            <option>Lamination</option><option>Typing</option><option>Stationary</option><option>Others</option>
-        </select>
-        <input id="searchService" placeholder="Search..." onkeyup="filterList()">
-    </div>
-
-    <ul id="serviceTable"></ul>
+<h2>Services</h2>
+<div id="adminTools">
+<input id="sname" placeholder="Service Name">
+<input id="sprice" type="number" placeholder="Price">
+<select id="scategory"><option>Printing</option><option>Online</option><option>Lamination</option><option>Typing</option><option>Stationary</option><option>Others</option></select>
+<button onclick="addService()">Add</button>
+</div>
+<ul id="serviceTable"></ul>
 </div>
 
-<script src="script/services.js"></script>
+<script src="/LK-Net-POS/script/services.js"></script>
 </body>
 </html>
