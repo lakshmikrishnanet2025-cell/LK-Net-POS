@@ -4,43 +4,37 @@
 <meta charset="UTF-8">
 <title>Dashboard - LK Net Centre POS</title>
 <link rel="stylesheet" href="style/dashboard.css">
+
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!-- Chart -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script/firebase.js"></script>
 </head>
 <body>
 
 <div class="sidebar">
     <h3>LK POS</h3>
-    <a href="index.html" class="active">📊 Dashboard</a>
+    <a class="active">📊 Dashboard</a>
     <a href="billing.html">🧾 Billing</a>
     <a href="services.html">🛠 Services</a>
     <a href="reports.html">📁 Reports</a>
     <a href="users.html">👥 Users</a>
-    <button class="logout" onclick="logout()">🚪 Logout</button>
+    <button onclick="logout()">🚪 Logout</button>
 </div>
 
 <div class="content">
     <h2>Dashboard</h2>
 
     <div class="stats">
-        <div class="card">
-            <h4>Today Earnings</h4>
-            <p>₹<span id="todayEarn">0</span></p>
-        </div>
-        <div class="card">
-            <h4>Today Bills</h4>
-            <p><span id="todayBills">0</span></p>
-        </div>
-        <div class="card">
-            <h4>This Month</h4>
-            <p>₹<span id="monthEarn">0</span></p>
-        </div>
-        <div class="card">
-            <h4>Top Service</h4>
-            <p><span id="bestService">---</span></p>
-        </div>
+        <div class="card"><h4>Today Earnings</h4><p>₹<span id="todayEarn">0</span></p></div>
+        <div class="card"><h4>Today Bills</h4><p><span id="todayBills">0</span></p></div>
+        <div class="card"><h4>This Month</h4><p>₹<span id="monthEarn">0</span></p></div>
+        <div class="card"><h4>Top Service</h4><p><span id="bestService">---</span></p></div>
     </div>
 
     <div class="graph">
@@ -48,7 +42,6 @@
     </div>
 </div>
 
-<script src="script/firebase.js"></script>
 <script src="script/dashboard.js"></script>
 </body>
 </html>
