@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard - LK Net Centre POS</title>
-<link rel="stylesheet" href="style/dashboard.css">
+<title>Dashboard</title>
+<link rel="stylesheet" href="/LK-Net-POS/style/dashboard.css">
 
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-<!-- Chart -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script src="script/firebase.js"></script>
+<script src="/LK-Net-POS/script/firebase.js"></script>
 </head>
-<body>
 
+<body>
 <div class="sidebar">
-    <h3>LK POS</h3>
-    <a class="active">📊 Dashboard</a>
-    <a href="billing.html">🧾 Billing</a>
-    <a href="services.html">🛠 Services</a>
-    <a href="reports.html">📁 Reports</a>
-    <a href="users.html">👥 Users</a>
-    <button onclick="logout()">🚪 Logout</button>
+<h3>LK POS</h3>
+<img src="/LK-Net-POS/assets/logo.png" class="logo">
+<a class="active">📊 Dashboard</a>
+<a href="billing.html">🧾 Billing</a>
+<a href="services.html">🛠 Services</a>
+<a href="reports.html">📁 Reports</a>
+<a href="users.html">👥 Users</a>
+<button onclick="logout()">🚪 Logout</button>
 </div>
 
 <div class="content">
-    <h2>Dashboard</h2>
-
-    <div class="stats">
-        <div class="card"><h4>Today Earnings</h4><p>₹<span id="todayEarn">0</span></p></div>
-        <div class="card"><h4>Today Bills</h4><p><span id="todayBills">0</span></p></div>
-        <div class="card"><h4>This Month</h4><p>₹<span id="monthEarn">0</span></p></div>
-        <div class="card"><h4>Top Service</h4><p><span id="bestService">---</span></p></div>
-    </div>
-
-    <div class="graph">
-        <canvas id="salesChart"></canvas>
-    </div>
+<h2>Dashboard</h2>
+<div class="stats">
+<div class="card"><h4>Today Earnings</h4><p>₹<span id="todayEarn">0</span></p></div>
+<div class="card"><h4>Today Bills</h4><p><span id="todayBills">0</span></p></div>
+<div class="card"><h4>This Month</h4><p>₹<span id="monthEarn">0</span></p></div>
+<div class="card"><h4>Top Service</h4><p><span id="bestService">---</span></p></div>
+</div>
+<canvas id="salesChart"></canvas>
 </div>
 
-<script src="script/dashboard.js"></script>
+<script src="/LK-Net-POS/script/dashboard.js"></script>
 </body>
 </html>
