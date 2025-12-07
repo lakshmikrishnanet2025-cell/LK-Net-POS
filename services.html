@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Services - LK Net Centre POS</title>
+<link rel="stylesheet" href="style/services.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>LK POS</h3>
+    <a href="index.html">📊 Dashboard</a>
+    <a href="billing.html">🧾 Billing</a>
+    <a href="services.html" class="active">🛠 Services</a>
+    <a href="reports.html">📁 Reports</a>
+    <a href="users.html">👥 Users</a>
+    <button class="logout" onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="content">
+    <h2>Services</h2>
+
+    <div id="adminTools">
+        <input type="text" id="sname" placeholder="Service Name">
+        <input type="number" id="sprice" placeholder="Price">
+        <select id="scategory">
+            <option>Printing</option>
+            <option>Online</option>
+            <option>Lamination</option>
+            <option>Typing</option>
+            <option>Stationary</option>
+            <option>Others</option>
+        </select>
+        <button onclick="addService()">➕ Add Service</button>
+    </div>
+
+    <div class="filter">
+        <select id="filterCat" onchange="filterList()">
+            <option value="All">All Categories</option>
+            <option value="Printing">Printing</option>
+            <option value="Online">Online</option>
+            <option value="Lamination">Lamination</option>
+            <option value="Typing">Typing</option>
+            <option value="Stationary">Stationary</option>
+            <option value="Others">Others</option>
+        </select>
+        <input type="text" id="searchService" placeholder="Search..." onkeyup="filterList()">
+    </div>
+
+    <ul id="serviceTable"></ul>
+</div>
+
+<script src="script/firebase.js"></script>
+<script src="script/services.js"></script>
+</body>
+</html>

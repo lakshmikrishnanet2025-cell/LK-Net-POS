@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f6ff;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: #1e5eff;
+    color: #fff;
+    height: 100vh;
+    padding-top: 15px;
+    position: fixed;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a, .sidebar button {
+    display: block;
+    padding: 12px;
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.sidebar a:hover, .sidebar .active, .logout:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.logout {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.billing-box {
+    display: flex;
+    gap: 20px;
+}
+
+.services, .bill {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.services ul li, .bill ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.services ul li:hover {
+    background: #e8f0ff;
+}
+
+.bill ul li {
+    background: #fff;
+}
+
+#saveBill {
+    width: 100%;
+    padding: 10px;
+    background: #1e5eff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#saveBill:hover { background: #0044cc; }
+
+/* Calculator */
+#calculator {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 180px;
+    background: #fff;
+    border: 2px solid #1e5eff;
+    padding: 10px;
+    border-radius: 4px;
+}
+#calc-display {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #1e5eff;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+#calc-buttons button {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border: none;
+    background: #1e5eff;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#calc-buttons button:hover { background: #0044cc; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Billing - LK Net Centre POS</title>
+<link rel="stylesheet" href="style/billing.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>LK POS</h3>
+    <a href="index.html">📊 Dashboard</a>
+    <a href="billing.html" class="active">🧾 Billing</a>
+    <a href="services.html">🛠 Services</a>
+    <a href="reports.html">📁 Reports</a>
+    <button class="logout" onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="content">
+    <h2>POS Billing</h2>
+
+    <div class="billing-box">
+        <div class="services">
+            <h3>Services</h3>
+            <ul id="serviceList"></ul>
+        </div>
+
+        <div class="bill">
+            <h3>Bill Items</h3>
+            <ul id="billItems"></ul>
+            <h2>Total: ₹<span id="total">0</span></h2>
+            <button id="saveBill" onclick="saveBill()">💾 Save Bill</button>
+        </div>
+    </div>
+</div>
+
+<!-- Calculator Popup -->
+<div id="calculator">
+    <input type="text" id="calc-display" disabled>
+    <div id="calc-buttons"></div>
+</div>
+
+<script src="script/firebase.js"></script>
+<script src="script/billing.js"></script>
+</body>
+</html>
