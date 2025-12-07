@@ -1,26 +1,18 @@
-auth.onAuthStateChanged(async u=>{
-    if(!u) location.href="login.html";
-    const d = await db.collection("users").doc(u.uid).get();
-    if(!d.exists||d.data().role!=="admin") adminTools.style.display="none";
-    load();
+auth.onAuthStateChanged(async (u)=>{
+  if(!u) return location.href="login.html";
+
+  const role = (await db.collection("users").doc(u.uid).get()).data().role;
+  if(role !== "admin"){
+    document.getElementById("addBox").style.display="none";
+  }
+  loadServices();
 });
 
-function load(){
-    db.collection("services").onSnapshot(s=>{
-        let h="";
-        s.forEach(x=>{
-            let d=x.data();
-            h+=`<li>${d.name} - ₹${d.price} [${d.category}]
-            <button onclick="del('${x.id}')">❌</button></li>`;
-        });
-        serviceTable.innerHTML=h;
-    });
+async function loadServices(){
+  let snap = await db.collection("services").get();
+  let html="";
+  snap.forEach(s=>{
+    html += `<tr><td>${s.data().name}</td><td>₹${s.data().price}</td></tr>`;
+  });
+  document.getElementById("serviceTable").innerHTML = html;
 }
-
-function addService(){
-    let n=sname.value, p=parseFloat(sprice.value), c=scategory.value;
-    if(!n||!p) return alert("Enter details!");
-    db.collection("services").add({name:n,price:p,category:c});
-}
-function del(id){ db.collection("services").doc(id).delete(); }
-function logout(){ auth.signOut(); }
