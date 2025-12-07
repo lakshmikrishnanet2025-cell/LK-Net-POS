@@ -1,0 +1,136 @@
+/* ===================== GENERAL ===================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #F5F7FA;
+  color: #333;
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #0D47A1;
+  padding-top: 15px;
+  color: #fff;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.sidebar img {
+  display: block;
+  width: 80%;
+  margin: 0 auto 12px auto;
+  border-radius: 8px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 18px;
+  color: #fff;
+  text-decoration: none;
+  margin: 4px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background: #1565C0;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+.main {
+  margin-left: 230px;
+  padding: 20px 30px;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: inline-block;
+  min-width: 220px;
+  margin: 10px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  color: #0D47A1;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary { background: #0D47A1; color: #fff; }
+.btn-primary:hover { background: #1565C0; }
+
+.btn-danger { background: #D32F2F; color: #fff; }
+.btn-danger:hover { background: #B71C1C; }
+
+.btn-gold { background: #E0A500; color: #fff; }
+.btn-gold:hover { background: #C08D00; }
+
+/* ===================== INPUTS ===================== */
+input, select {
+  width: 280px;
+  padding: 10px;
+  margin: 6px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #E9EFF6;
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1), inset -3px -3px 6px rgba(255,255,255,0.8);
+}
+
+input:focus, select:focus {
+  outline: 2px solid #0D47A1;
+}
+
+/* ===================== TABLES ===================== */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background: #1565C0;
+  color: #fff;
+}
+
+tr:hover {
+  background: #E6F0FF;
+}
